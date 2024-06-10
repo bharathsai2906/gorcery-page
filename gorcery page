@@ -1,0 +1,71 @@
+HTML....
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/ac42c3b1f7.js" crossorigin="anonymous"></script>
+    <title>Grocery Items</title>
+    <link rel="stylesheet" href="gorcery.css" />
+  </head>
+  <body>
+     <script src="gorcery.js"></script>
+ </body>
+ </html>
+
+>css
+
+.bg-container{
+    background-color: #3a6781;
+    padding: 30px;
+    height: 100vh;
+}
+.heading{
+    color: white;
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.list-container{
+    background-color: white;
+    border-radius: 6px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 45px;
+    padding-left: 45px;
+    font-size: 26px;
+}
+.delivery-text{
+    color: white;
+    font-size: 16px;
+    font-family: Roboto;
+    margin-left: 6px;
+}
+
+.JS...
+
+let bgContainerEl = document.createElement("div");
+bgContainerEl.classList.add("bg-container");
+document.body.appendChild(bgContainerEl);
+
+let headingEl = document.createElement("h1");
+headingEl.classList.add("heading");
+headingEl.textContent = "Grocery List";
+bgContainerEl.appendChild(headingEl);
+
+let listContainerEl =  document.createElement("ul")
+listContainerEl.classList.add("list-container");
+bgContainerEl.appendChild(listContainerEl);
+
+let groceryItems = ["Apple", "Boost Drink", "Butterscotch Ice Cream", "Tomato Ketchup", "Dairy Milk Choclates", "Pasta"];
+
+for (let groceryItem of groceryItems){
+    let listItemEl = document.createElement("li");
+    listItemEl.textContent = groceryItem;
+    listContainerEl.appendChild(listItemEl);
+}
